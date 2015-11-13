@@ -301,8 +301,14 @@ public:
     void setSelectionColor(const QColor &color);
 
 
-    int getSelectionBegin();
-    int getSelectionEnd();
+    int getSelectionBegin() const;
+    int getSelectionEnd()	const;
+
+    int  bytesPerLine() const;
+    void setBytesPerLine(int Size);
+
+    int     AddressDiv() const;
+    void setAddressDiv(int div);
 
 protected:
     // Handle events
@@ -331,6 +337,9 @@ private slots:
     void updateCursor();                        // update blinking cursor
 
 private:
+    int _addressDiv;
+    int _hex_chars_in_line;
+	int _bytes_per_line;
     // Name convention: pixel positions start with _px
     int _pxCharWidth, _pxCharHeight;            // char dimensions (dpendend on font)
     int _pxPosHexX;                             // X-Pos of HeaxArea
