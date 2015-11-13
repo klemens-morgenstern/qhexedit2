@@ -300,6 +300,10 @@ public:
     QColor selectionColor();
     void setSelectionColor(const QColor &color);
 
+
+    int getSelectionBegin();
+    int getSelectionEnd();
+
 protected:
     // Handle events
     void keyPressEvent(QKeyEvent *event);
@@ -313,8 +317,7 @@ private:
     void resetSelection(qint64 pos);            // set selectionStart and selectionEnd to pos
     void resetSelection();                      // set selectionEnd to selectionStart
     void setSelection(qint64 pos);              // set min (if below init) or max (if greater init)
-    int getSelectionBegin();
-    int getSelectionEnd();
+
 
     // Private utility functions
     void init();
